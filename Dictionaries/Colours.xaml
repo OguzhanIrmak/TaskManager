@@ -14,6 +14,9 @@
     <SolidColorBrush x:Key="DefaultText" Color="#FF474747"/>
     <!--On Accent-->
     <SolidColorBrush x:Key="OnAccent" Color="#FFFFFFFF"/>
+    
+    <!--Borders-->
+    <SolidColorBrush x:Key="Borders" Color="#FFCCCCCC"/>
 
     <!--Importance Colours-->
     <SolidColorBrush x:Key="Importance-Low" Color="#FF0CAFF4"/>
