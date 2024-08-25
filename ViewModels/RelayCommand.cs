@@ -27,7 +27,7 @@ namespace TaskTurner.ViewModels
         }
         public bool CanExecute(object parameter)
         {
-            return _canExecute != null || _canExecute();
+            return _canExecute == null || _canExecute();
         }
         public void Execute(object parameter)
         {
