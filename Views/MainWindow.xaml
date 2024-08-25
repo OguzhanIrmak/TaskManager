@@ -6,9 +6,30 @@
         xmlns:local="clr-namespace:TaskTurner"
         mc:Ignorable="d"
         Title="MainWindow" Height="832" Width="1280"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        MinWidth="1150"
+        MinHeight="450">
+    <Window.Resources>
+        <Storyboard x:Key="SlideOnLoad">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0.0" To="1.0" Duration="0:0:1">
+                <DoubleAnimation.EasingFunction>
+                    <CubicEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,100,0,0" To="0,0,0,0" Duration="0:0:1">
+                <ThicknessAnimation.EasingFunction>
+                    <CubicEase EasingMode="EaseOut"/>
+                </ThicknessAnimation.EasingFunction>
+            </ThicknessAnimation>
+        </Storyboard>
+    </Window.Resources>
 
-    <Grid>
+    <Grid Opacity="0" Margin="0 100 0 0">
+        <Grid.Triggers>
+            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                <BeginStoryboard Storyboard="{StaticResource SlideOnLoad}"/>
+            </EventTrigger> 
+        </Grid.Triggers>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="80" />
             <ColumnDefinition Width="435" />
@@ -18,11 +39,28 @@
 
         <!--Nav Panel-->
         <Rectangle Fill="{StaticResource AccentDark}"/>
+        <StackPanel Margin="20 15 10 10">
+            <Button Style="{StaticResource TaskManagerNavButton}">
+                <Viewbox Width="35" Height="35">
+                    <Path Data="{StaticResource ListIcon}" Fill="White"/>
+                </Viewbox>
+            </Button>
+            <Button Style="{StaticResource TaskManagerNavButton}">
+                <Viewbox Width="30" Height="30">
+                    <Path Data="{StaticResource CheckIcon}" Fill="White"/>
+                </Viewbox>
+            </Button>
+            <Button Style="{StaticResource TaskManagerNavButton}">
+                <Viewbox Width="30" Height="30">
+                    <Path Data="{StaticResource TimerIcon}" Fill="White"/>
+                </Viewbox>
+            </Button>
+        </StackPanel>
         <!--Task List Background-->
         <Rectangle Fill="{StaticResource TaskListBackground}"
                    Grid.Column="1"/>
         <!--Task List Grid-->
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="1" Opacity="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="38"/>
@@ -113,7 +151,7 @@
                         Background="{StaticResource Importance-Crit}">
                     <TextBlock Text="Critical"
                                Foreground="Black"
-                               FontSize="16"
+                               FontSize="12"
                                FontWeight="Normal">
 
                     </TextBlock>
@@ -184,5 +222,14 @@
         <!--Task Status Bar-->
         <Rectangle Fill="{StaticResource TaskStatusBackground}"
                    Grid.Column="3"/>
+        
+        <!--Task Status-->
+        <Grid Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="230"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="140"/>
+            </Grid.RowDefinitions>
+        </Grid>
     </Grid>
 </Window>
