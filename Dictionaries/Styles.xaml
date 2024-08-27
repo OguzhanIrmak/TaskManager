@@ -86,7 +86,35 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+    <!--New Text Box-->
+    <Style x:Key="NewTextBox" TargetType="TextBox">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Borders}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="20 0 50 0"/>
+        <Setter Property="Cursor" Value="IBeam"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <!--Border-->
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                        <!--ScrollBar-->
+                        <ScrollViewer x:Name="PART_ContentHost"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                                      Margin="1 5"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!--Mouse Over Trigger-->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="{DynamicResource AccentDarkOver}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!--Task Title-->
     <Style x:Key="Title" TargetType="TextBlock">
         <Setter Property="Background" Value="Transparent"/>
