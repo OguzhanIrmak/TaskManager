@@ -6,7 +6,7 @@
         xmlns:vm="clr-namespace:TaskTurner.ViewModels"
         xmlns:local="clr-namespace:TaskTurner"
         mc:Ignorable="d"
-        Title="MainWindow" Height="831" Width="1280"
+        Title="MainWindow" Height="832" Width="1280"
         WindowStartupLocation="CenterScreen"
         MinWidth="1150"
         MinHeight="450">
