@@ -36,11 +36,14 @@ namespace TaskTurner.ViewModels
             }
         }
 
+        //Load Task : This method loads the list of task from the TaskDataService and updates the task collection.
+        // The task collection is bound to the view, so updating this collection will update the UI accordingly.
         private void LoadTasks()
         {
             var TaskList=_taskDataService.LoadTasks();
             Tasks = new ObservableCollection<Task>(TaskList);
         }
+        //Responsible for adding a new task.
         public void AddNeewTask(Task newtask)
         {
             _taskDataService.AddTask(newtask);
@@ -58,6 +61,8 @@ namespace TaskTurner.ViewModels
             LoadTasks();
         }
 
+        //Constructor for the TaskViewModel.
+        //Initializes the TaskDataService and load tasks.
         public TaskViewModel()
         {
            _taskDataService = new TaskDataService(); // initializing the TaskDataService.
