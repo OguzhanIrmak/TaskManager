@@ -1,13 +1,19 @@
 
 Project Name: **TaskTurner**
+
 Project Type: **WPF Application**
+
 Platform: **.NET** 
+
 Data Storage: **JSON File Format**
 
+
 Project Description:
+
 **TaskTurner is a desktop application designed for personal task management and planning. Users can organize their tasks, track their completion status, and manage the start and due dates of tasks. The application aims to simplify task management and help users keep their to-do lists organized.**
 
 Features:
+
 1-Task Management: Tasks can be added, updated, and deleted.
 
 2-Task Categories: Tasks can be categorized (e.g., education, work, personal).
@@ -25,21 +31,28 @@ Features:
 8-JSON Data Storage: Tasks and related data are stored in JSON format and loaded from a JSON file.
 
 Technology and Tools:
+
 # WPF (Windows Presentation Foundation): For building the user interface.
 # C#: For implementing the application's logic.
 # JSON: Used as a simple and portable data format for storing task data.
 # MVVM Design Pattern: The application follows the MVVM (Model-View-ViewModel) design pattern to ensure a layered and testable structure.
 
+
 Use Cases:
+
 ## Adding a New Task: Users can add a new task by entering details like title, description, due date, and importance.
 ## Updating a Task: Users can update an existing task, mark it as completed, or change its due date.
 ## Deleting a Task: Users can delete tasks that are no longer needed.
 ## Viewing Task List: Users can view all their tasks in a list and easily check their status.
 
 Future Improvements:
+
 + Notifications: Add reminder notifications as tasks approach their due dates.
++ 
 + Data Synchronization: Implement cloud-based storage synchronization for task data.
++ 
 + UI Enhancements: Develop a more modern and user-friendly interface design.
++ 
 
 ## Ongoing Development: The application is not yet complete; I am currently working on small but important details to enhance functionality and user experience.🎗️🎗️🎗️
 
