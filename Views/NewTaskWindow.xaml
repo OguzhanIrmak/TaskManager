@@ -24,7 +24,8 @@
             </Grid.ColumnDefinitions>
             <TextBox x:Name="TaskTitle"
                      Style="{StaticResource NewTextBox}"
-                     Margin="20 10 20 8"/>
+                     Margin="20 10 20 8"
+                     Text="{Binding Title,UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Content="Title..."
                    Margin="20 10"
@@ -52,7 +53,9 @@
                  FontWeight="Normal"
                  VerticalContentAlignment="Top"
                  HorizontalContentAlignment="Left"
-                 TextAlignment="Left"/>
+                 TextAlignment="Left"
+                 BorderBrush="{StaticResource Borders}"
+                 Text="{Binding Description,UpdateSourceTrigger=PropertyChanged}"/>
         <Label Content="Task Description..."
        Grid.Row="1"
        Margin="20 10"
@@ -91,7 +94,8 @@
                         HorizontalAlignment="Left">
                 <TextBlock Text="Due: " Margin="0 0 20 0"
                            VerticalAlignment="Center"/>
-                <DatePicker Margin="0 0 20 0"/>
+                <DatePicker Margin="0 0 20 0"
+                            SelectedDate="{Binding DueDate,UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Text="@" Margin="0 0 20 0 "/>
                 <ComboBox SelectedIndex="0" MinWidth="60"/>
                 <TextBlock Text=":" Margin="10 0 10 0 "
@@ -106,6 +110,7 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             Content="Add Task"
-            Margin="0 0 20 0"/>
+            Margin="0 0 20 0"
+                Command="{Binding IAddNewTask}"/>
     </Grid>
 </Window>

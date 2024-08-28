@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TaskTurner.ViewModels;
 
 namespace TaskTurner.Views
 {
@@ -22,6 +23,8 @@ namespace TaskTurner.Views
         public NewTaskWindow()
         {
             InitializeComponent();
+
+            DataContext = new TaskViewModel();
         }
     }
 }
