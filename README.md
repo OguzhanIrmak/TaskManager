@@ -30,12 +30,15 @@ Features:
 
 8-JSON Data Storage: Tasks and related data are stored in JSON format and loaded from a JSON file.
 
-Technology and Tools:
+**Technology and Tools:**
 
-# WPF (Windows Presentation Foundation): For building the user interface.
-# C#: For implementing the application's logic.
-# JSON: Used as a simple and portable data format for storing task data.
-# MVVM Design Pattern: The application follows the MVVM (Model-View-ViewModel) design pattern to ensure a layered and testable structure.
+- WPF (Windows Presentation Foundation): For building the user interface.
+ 
+-  C#: For implementing the application's logic.
+  
+-  JSON: Used as a simple and portable data format for storing task data.
+  
+-  MVVM Design Pattern: The application follows the MVVM (Model-View-ViewModel) design pattern to ensure a layered and testable structure.
 
 
 Use Cases:
