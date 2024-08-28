@@ -43,19 +43,23 @@ Features:
 
 Use Cases:
 
-## Adding a New Task: Users can add a new task by entering details like title, description, due date, and importance.
-## Updating a Task: Users can update an existing task, mark it as completed, or change its due date.
-## Deleting a Task: Users can delete tasks that are no longer needed.
-## Viewing Task List: Users can view all their tasks in a list and easily check their status.
+ - Adding a New Task: Users can add a new task by entering details like title, description, due date, and importance.
+  
+ - Updating a Task: Users can update an existing task, mark it as completed, or change its due date.
+  
+ - Deleting a Task: Users can delete tasks that are no longer needed.
+  
+ - Viewing Task List: Users can view all their tasks in a list and easily check their status.
+   
 
 Future Improvements:
 
 + Notifications: Add reminder notifications as tasks approach their due dates.
-+ 
+ 
 + Data Synchronization: Implement cloud-based storage synchronization for task data.
-+ 
+ 
 + UI Enhancements: Develop a more modern and user-friendly interface design.
-+ 
+ 
 
 ## Ongoing Development: The application is not yet complete; I am currently working on small but important details to enhance functionality and user experience.🎗️🎗️🎗️
 
