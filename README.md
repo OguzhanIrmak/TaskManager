@@ -9,12 +9,19 @@ Project Description:
 
 Features:
 1-Task Management: Tasks can be added, updated, and deleted.
+
 2-Task Categories: Tasks can be categorized (e.g., education, work, personal).
+
 3-Task States: Track the status of tasks (not started, in progress, completed, late, etc.).
+
 4-Task Importance: Assign importance levels to tasks (low, medium, critical, etc.).
+
 5-Checklist Support: Subtasks or checklists can be added to each task.
+
 6-Date Management: Set start and due dates for tasks.
+
 7-Task Timer: Keep track of the time spent on tasks using a timer.
+
 8-JSON Data Storage: Tasks and related data are stored in JSON format and loaded from a JSON file.
 
 Technology and Tools:
