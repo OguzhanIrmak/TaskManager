@@ -12,7 +12,7 @@ Project Description:
 
 **TaskTurner is a desktop application designed for personal task management and planning. Users can organize their tasks, track their completion status, and manage the start and due dates of tasks. The application aims to simplify task management and help users keep their to-do lists organized.**
 
-Features:
+**Features:**
 
 1-Task Management: Tasks can be added, updated, and deleted.
 
@@ -41,7 +41,7 @@ Features:
 -  MVVM Design Pattern: The application follows the MVVM (Model-View-ViewModel) design pattern to ensure a layered and testable structure.
 
 
-Use Cases:
+**Use Cases:**
 
  - Adding a New Task: Users can add a new task by entering details like title, description, due date, and importance.
   
@@ -52,7 +52,7 @@ Use Cases:
  - Viewing Task List: Users can view all their tasks in a list and easily check their status.
    
 
-Future Improvements:
+**Future Improvements:**
 
 + Notifications: Add reminder notifications as tasks approach their due dates.
  
