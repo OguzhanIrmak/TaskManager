@@ -97,11 +97,15 @@
                 <TextBlock Text=":" Margin="10 0 10 0 "
                            VerticalAlignment="Center"/>
                 <ComboBox SelectedIndex="0" MinWidth="60"/>
-                <TextBlock Text="AM" Margin="5 0 20 0"/>
-
-
-
+                <TextBlock Text="AM" Margin="5 4 20 0"/>
             </StackPanel>
+            <CheckBox Margin="10 20 20 0" Content="Include Timer (Yoıu can time how long a projects takes with a stop watch)."/>
+            <CheckBox Margin="10 20 20 0" Content="Add task to your calendar."/>
         </StackPanel>
+        <Button Grid.Row="5" Style="{StaticResource AddTaskButton}"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Content="Add Task"
+            Margin="0 0 20 0"/>
     </Grid>
 </Window>

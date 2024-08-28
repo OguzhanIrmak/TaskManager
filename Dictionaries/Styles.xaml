@@ -220,5 +220,29 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <!--Add Task Button-->
+    <Style x:Key="AddTaskButton" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource Button.Complate}"/>
+        <Setter Property="Foreground" Value="{StaticResource OnAccent}"/>
+        <Setter Property="Padding" Value="40 5"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}"  CornerRadius="3" >
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Button.Complate.Over}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Button.Complate.Click}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 </ResourceDictionary>
