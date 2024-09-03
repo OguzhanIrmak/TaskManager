@@ -114,6 +114,7 @@
             VerticalAlignment="Center"
             Content="Add Task"
             Margin="0 0 20 0"
-                Command="{Binding IAddNewTask}"/>
+            Command="{Binding IAddNewTask}"
+                Click="Button_Click"/>
     </Grid>
 </Window>

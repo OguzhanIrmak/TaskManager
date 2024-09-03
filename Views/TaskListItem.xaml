@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TaskTurner.Views"
+             
              mc:Ignorable="d" 
              d:DesignHeight="145" d:DesignWidth="435">
     <Grid>
@@ -13,7 +14,7 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
         <!--Title-->
-        <TextBlock Text="Title" Style="{StaticResource Title}"
+        <TextBlock Text="{Binding Title}" Style="{StaticResource Title}"
                    Margin="20 0"
                    VerticalAlignment="Center"
                    Foreground="{StaticResource TaskListUCTitle}"/>
@@ -23,21 +24,21 @@
                 Height="23"
                 HorizontalAlignment="Right"
                 Margin="0 0 20 0">
-            <TextBlock Text="Category" Foreground="{StaticResource PlaceholderBorderText}"
+            <TextBlock Text="{Binding Importance}" Foreground="{StaticResource PlaceholderBorderText}"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"/>
 
         </Border>
         
         <!--Description-->
-        <TextBlock Text="This text has been added for testing purposes."
+        <TextBlock Text="{Binding Description}"
                    TextWrapping="Wrap"
                    Grid.Row="1"
                    Margin="20 5 0 0"
                    Foreground="{StaticResource TaskListUCText}"/>
         
         <!--Due Date-->
-        <TextBlock Text="25/08/2024"
+        <TextBlock Text="{Binding DueDate}"
                    Grid.Row="2"
                    VerticalAlignment="Center"
                    Margin="20 0"

@@ -59,6 +59,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DataService\TaskDataService.cs" />
+    <Compile Include="ViewModels\NewTaskViewModel.cs" />
+    <Compile Include="ViewModels\TaskListItemViewModel.cs" />
     <Compile Include="ViewModels\TaskViewModel.cs" />
     <Compile Include="Views\NewTaskWindow.xaml.cs">
       <DependentUpon>NewTaskWindow.xaml</DependentUpon>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -19,6 +20,21 @@ namespace TaskTurner.ViewModels
         {
            NewTaskWindow newTaskWindow = new NewTaskWindow();
             newTaskWindow.Show();
+        }
+
+        public ICommand IAddNewTask {  get; set; }
+
+        private ObservableCollection<TaskListItemViewModel> TaskList {  get; set; }
+        
+
+        public MainWindowViewModel()
+        {
+            TaskList = new ObservableCollection<TaskListItemViewModel>();
+            IAddNewTask = new RelayCommand(AddNewTask);
+        }
+        private void AddNewTask()
+        {
+            
         }
 
 

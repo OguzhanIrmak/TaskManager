@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:TaskTurner.ViewModels"
-        xmlns:local="clr-namespace:TaskTurner"
+        xmlns:local="clr-namespace:TaskTurner" xmlns:local1="clr-namespace:TaskTurner.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="832" Width="1280"
         WindowStartupLocation="CenterScreen"
@@ -200,10 +200,16 @@
                            VerticalAlignment="Center"
                            Margin="20 0 0 0 "/>
                 <!--Check Lists-->
-                <ListView 
+                <ListView x:Name="TaskListView"
                     Background="Transparent"
                     BorderThickness="0"
-                    Grid.Row="1">
+                    Grid.Row="1"
+                    ItemsSource="{Binding TasksList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <local1:TaskListItem/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
                 </ListView>
             </Grid>
 

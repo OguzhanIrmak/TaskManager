@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using TaskTurner.ViewModels;
+using TaskTurner.Views;
+using TaskTurner.Models;
 
 namespace TaskTurner
 {
@@ -64,5 +66,24 @@ namespace TaskTurner
             timer.Start();
             ClockText.Foreground=new SolidColorBrush(Colors.Black);
         }
+        public void AddTaskToList(Models.Task task)
+        {
+
+            // TaskListItem UserControl'ü oluşturun ve veri bağlayın
+            TaskListItem taskListItem = new TaskListItem
+            {
+                DataContext = new TaskListItemViewModel
+                {
+                    Title = task.Title,
+                    Description = task.Description,
+                    Importance = task.TaskImportance.ToString(),
+                    DueDate = task.DueDate.ToString("dd/MM/yyyy")
+                }
+            };
+
+            // ListView'e ekleyin
+            TaskListView.Items.Add(taskListItem);
+        }
+
     }
 }
