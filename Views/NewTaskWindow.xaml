@@ -33,8 +33,11 @@
                    IsHitTestVisible="False"/>
             <ComboBox Grid.Column="1"
                       Margin="10"
-                      VerticalAlignment="Center"
-                      Padding="0 10"/>
+                     
+                     Padding="7"
+                      ItemsSource="{Binding Importances}"
+                      SelectedItem="{Binding SelectedImportance,Mode=TwoWay}"
+                    />
 
         </Grid>
 

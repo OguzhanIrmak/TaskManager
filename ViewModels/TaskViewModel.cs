@@ -5,9 +5,13 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Windows;
 using System.Windows.Input;
 using TaskTurner.DataService;
 using TaskTurner.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace TaskTurner.ViewModels
 {
@@ -25,6 +29,19 @@ namespace TaskTurner.ViewModels
         public TaskImportance TaskImportance { get; set; }
         public ObservableCollection<TaskCheckList> TaskCheckList { get; set; }
 
+        //Task Importance Properties
+        public ObservableCollection<TaskImportance> Importances { get; set; }
+        private TaskImportance _selectedImportance;
+        public TaskImportance SelectedImportance
+        {
+            get => _selectedImportance;
+            set
+            {
+                _selectedImportance = value;
+                OnPropertyChanged(nameof(SelectedImportance));
+            }
+        }
+
         public ICommand IAddNewTask => new RelayCommand(AddNewTask);
 
 
@@ -37,7 +54,7 @@ namespace TaskTurner.ViewModels
 
         //Event declaration for PropertyChanged.
         // This is used in the context of INotifyPropertyChanged to notify the UI when a property value changes
-        public event PropertyChangedEventHandler PropertyChanged;
+       
 
 
         // Public property for tasks.
@@ -73,9 +90,10 @@ namespace TaskTurner.ViewModels
                 StartDate=DateTime.Now,
                 TaskCategory=TaskCategory.Education,
                 TaskCheckList=this.TaskCheckList,
-                TaskImportance=TaskImportance.Critical,
+                TaskImportance=this.SelectedImportance,
                 TaskState=TaskState.Late,
-                Timer=new TimeSpan(0),
+                //Timer=new TimeSpan(0),
+                Timer=this.Timer,
 
             };
             _taskDataService.AddTask(newTask);
@@ -92,6 +110,7 @@ namespace TaskTurner.ViewModels
             Description = "";
             DueDate= DateTime.Now;
             TaskCheckList.Clear();
+            SelectedImportance=Importances.FirstOrDefault();
 
             UpdateForm();
            
@@ -121,13 +140,17 @@ namespace TaskTurner.ViewModels
         {
            _taskDataService = new TaskDataService(); // initializing the TaskDataService.
             TaskCheckList = new ObservableCollection<TaskCheckList>();
+            Importances = new ObservableCollection<TaskImportance>(Enum.GetValues(typeof(TaskImportance)).Cast<TaskImportance>());
             DueDate= DateTime.Now;
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
+
+    
     
 }
