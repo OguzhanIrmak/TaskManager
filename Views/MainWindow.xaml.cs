@@ -69,20 +69,16 @@ namespace TaskTurner
         public void AddTaskToList(Models.Task task)
         {
 
-            // TaskListItem UserControl'ü oluşturun ve veri bağlayın
-            TaskListItem taskListItem = new TaskListItem
+            
+            var taskListItem = new TaskListItem
             {
-                DataContext = new TaskListItemViewModel
-                {
-                    Title = task.Title,
-                    Description = task.Description,
-                    Importance = task.TaskImportance.ToString(),
-                    DueDate = task.DueDate.ToString("dd/MM/yyyy")
-                }
+                DataContext = new TaskListItemViewModel(task)
             };
 
-            // ListView'e ekleyin
             TaskListView.Items.Add(taskListItem);
+
+           
+           
         }
 
     }

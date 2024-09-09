@@ -32,7 +32,7 @@ namespace TaskTurner.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var viewModel = DataContext as NewTaskViewModel;
+            var viewModel = DataContext as TaskViewModel;
 
             if (viewModel != null)
             {
@@ -41,7 +41,7 @@ namespace TaskTurner.Views
                     Title = viewModel.Title,
                     Description = viewModel.Description,
                     TaskImportance = viewModel.SelectedImportance,
-                    DueDate = viewModel.DueDate ?? DateTime.Now 
+                    DueDate = viewModel.DueDate 
                 };
 
                 var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
